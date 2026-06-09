@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceMath Lab - Laboratorio de Matemática Financiera</title>
+    <meta name="description" content="Simuladores interactivos y herramientas avanzadas de matemáticas financieras para estudiantes y profesionales.">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons (CDN) for premium visual aesthetics -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js (CDN) for interactive financial charting -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i data-lucide="calculator" class="logo-icon"></i>
+                    <span class="logo-text">FinanceMath <span class="accent-text">Lab</span></span>
+                </div>
+                <button class="close-sidebar-btn" id="closeSidebarBtn" aria-label="Cerrar menú">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <p class="nav-section-title">MÓDULOS</p>
+                <ul class="nav-list">
+                    <li>
+                        <a href="#simple" class="nav-link active" data-module="simple">
+                            <i data-lucide="percent"></i>
+                            <span>Interés Simple</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#compuesto" class="nav-link" data-module="compuesto">
+                            <i data-lucide="trending-up"></i>
+                            <span>Interés Compuesto</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tasas" class="nav-link" data-module="tasas">
+                            <i data-lucide="refresh-cw"></i>
+                            <span>Equivalencia de Tasas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#fechafocal" class="nav-link" data-module="fechafocal">
+                            <i data-lucide="calendar"></i>
+                            <span>Fecha Focal</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#anualidades" class="nav-link" data-module="anualidades">
+                            <i data-lucide="layers"></i>
+                            <span>Anualidades</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#amortizacion" class="nav-link" data-module="amortizacion">
+                            <i data-lucide="table-properties"></i>
+                            <span>Amortización</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#creditos" class="nav-link" data-module="creditos">
+                            <i data-lucide="award"></i>
+                            <span>Créditos</span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="nav-section-title">CONFIGURACIÓN</p>
+                <ul class="nav-list">
+                    <li>
+                        <a href="#pruebas" class="nav-link" data-module="pruebas">
+                            <i data-lucide="settings"></i>
+                            <span>Pruebas Académicas</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Cambiar tema">
+                    <i data-lucide="moon" class="theme-icon-dark"></i>
+                    <i data-lucide="sun" class="theme-icon-light" style="display: none;"></i>
+                    <span class="theme-text">Modo Oscuro</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Wrapper -->
+        <div class="main-wrapper">
+            <!-- Top Mobile Navbar -->
+            <header class="top-navbar">
+                <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Abrir menú">
+                    <i data-lucide="menu"></i>
+                </button>
+                <div class="mobile-logo">
+                    <i data-lucide="calculator" class="logo-icon"></i>
+                    <span class="logo-text">FinanceMath <span class="accent-text">Lab</span></span>
+                </div>
+                <div class="header-actions">
+                    <!-- User info or notifications space if needed -->
+                    <span class="badge">V1.0 - Académico</span>
+                </div>
+            </header>
+
+            <!-- Dynamic Content Area -->
+            <main class="main-content" id="mainContent">
+                <!-- Dynamically loaded content goes here -->
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Cargando módulo...</p>
+                </div>
+            </main>
+
+            <!-- Dashboard Footer -->
+            <footer class="app-footer">
+                <p>&copy; 2026 FinanceMath Lab. Laboratorio Académico de Matemáticas Financieras. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Módulos globales pre-cargados para evitar bloqueos de CORS en modo local (file:///) -->
+    <script>window.FinanceModules = {};</script>
+    <script src="modules/simple.js"></script>
+    <script src="modules/compuesto.js"></script>
+    <script src="modules/tasas.js"></script>
+    <script src="modules/fechafocal.js"></script>
+    <script src="modules/anualidades.js"></script>
+    <script src="modules/amortizacion.js"></script>
+    <script src="modules/creditos.js"></script>
+    <script src="tests.js"></script>
+    <script src="modules/pruebas.js"></script>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>
